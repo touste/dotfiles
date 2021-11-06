@@ -41,11 +41,7 @@ echo "alias dotfiles='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'" >> 
 
 git clone --bare https://github.com/touste/dotfiles $HOME/.cfg
 
-mkdir -p .config/config-backup && \
-dotfiles checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | \
-xargs -I{} mv {} .config/config-backup/{}
-
-dotfiles checkout
+dotfiles checkout || echo -e 'Deal with conflicting files, then run (possibly with -f flag if you are OK with overwriting)\ndotfiles checkout'
 
 dotfiles config --local status.showUntrackedFiles no
 
