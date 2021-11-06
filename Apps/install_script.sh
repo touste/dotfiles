@@ -39,7 +39,7 @@ echo "Importing dotfiles..."
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 echo "alias dotfiles='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'" >> $HOME/.zshrc
 
-git clone --bare <git-repo-url> $HOME/.cfg
+git clone --bare https://github.com/touste/dotfiles $HOME/.cfg
 
 mkdir -p .config/config-backup && \
 dotfiles checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | \
