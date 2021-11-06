@@ -9,13 +9,14 @@ git clone https://github.com/agkozak/zsh-z.git $HOME/.zprezto-contrib/zsh-z
 
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
-# Remove zpreztorc as it will be added later on
-rm $HOME/.zprezto/runcoms/zpreztorc
 
 setopt EXTENDED_GLOB
 for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
   ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
 done
+
+# Remove zpreztorc as it will be added later on
+rm $HOME/.zprezto/runcoms/zpreztorc
 
 
 # Get micro
