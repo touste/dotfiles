@@ -16,9 +16,6 @@ for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
 done
 
 
-chsh -s $(which zsh)
-
-
 # Get micro
 echo "Installing micro editor"
 cd .local/bin
@@ -44,4 +41,10 @@ git clone --bare https://github.com/touste/dotfiles $HOME/.cfg
 dotfiles checkout || echo -e 'Deal with conflicting files, then run (possibly with -f flag if you are OK with overwriting)\ndotfiles checkout'
 
 dotfiles config --local status.showUntrackedFiles no
+
+
+
+
+# Tips
+echo "Don't forget to change your default shell: chsh -s $(which zsh)"
 
