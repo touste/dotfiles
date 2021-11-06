@@ -33,10 +33,10 @@ fi
 # Configure dotfile repo (https://www.atlassian.com/git/tutorials/dotfiles)
 echo "Importing dotfiles..."
 
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-echo "alias dotfiles='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'" >> $HOME/.zshrc
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+echo "alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> $HOME/.zshrc
 
-git clone --bare https://github.com/touste/dotfiles $HOME/.cfg
+git clone --bare https://github.com/touste/dotfiles $HOME/.dotfiles
 
 dotfiles checkout || echo -e 'Deal with conflicting files, then run (possibly with -f flag if you are OK with overwriting)\ndotfiles checkout'
 
