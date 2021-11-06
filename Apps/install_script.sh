@@ -1,9 +1,12 @@
 # Apps dir
-echo "Making apps dir"
+echo "Making Apps dir"
 mkdir -p $HOME/Apps
 
 # Prezto
 echo "Installing Prezto for zsh"
+# z jump
+git clone https://github.com/agkozak/zsh-z.git $HOME/.zprezto-contrib/zsh-z
+
 zsh -i -c 'git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"'
 
 setopt EXTENDED_GLOB
@@ -44,4 +47,3 @@ dotfiles checkout
 
 dotfiles config --local status.showUntrackedFiles no
 
-# z jump

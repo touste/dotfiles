@@ -42,7 +42,8 @@ zstyle ':prezto:load' pmodule \
   'syntax-highlighting' \
   'history-substring-search' \
   'autosuggestions' \
-  'git'
+  'git' \
+  'zsh-z'
 
 #
 # Autosuggestions
@@ -229,3 +230,4 @@ zstyle ':prezto:module:prompt' theme 'pure'
 # before deleting or overwriting files. Set to 'no' to disable this safer
 # behavior.
 # zstyle ':prezto:module:utility' safe-ops 'yes'
+zstyle ':prezto:load' pmodule-dirs /home/master/.zprezto-contrib
